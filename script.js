@@ -1,25 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const playBtn = document.getElementById("playMusicBtn");
   const music = document.getElementById("bgMusic");
-  music.volume = 1;
 
-  // 1️⃣ COBA AUTOPLAY SAAT LOAD
-  const playMusic = () => {
-    music.play().catch(() => {
-      // gagal autoplay → ditangani di bawah
-    });
-  };
-
-  playMusic();
-
-  // 2️⃣ FALLBACK: nyala saat ADA INTERAKSI APA PUN
-  const enableAudio = () => {
-    playMusic();
-    document.removeEventListener("click", enableAudio);
-    document.removeEventListener("scroll", enableAudio);
-    document.removeEventListener("touchstart", enableAudio);
-  };
-
-  document.addEventListener("click", enableAudio);
-  document.addEventListener("scroll", enableAudio);
-  document.addEventListener("touchstart", enableAudio);
+  playBtn.addEventListener("click", () => {
+    music.play();
+    playBtn.style.display = "none"; // tombol hilang setelah play
+  });
 });
