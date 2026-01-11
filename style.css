@@ -725,3 +725,21 @@ body {
     transform: translateY(180px);
   }
 }
+
+
+#playMusicBtn {
+  padding: 10px 25px;
+  font-size: 20px;
+  border: none;
+  position: relative;
+  border-radius: 20px;
+  background: #ff4f81;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.1s;
+}
+
+#playMusicBtn:hover {
+  transform: scale(1.1);
+}
